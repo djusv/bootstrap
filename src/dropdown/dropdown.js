@@ -189,7 +189,7 @@ angular.module('ui.bootstrap.dropdown', ['ui.bootstrap.position'])
 
   scope.$watch('isOpen', function(isOpen, wasOpen) {
     if (appendTo && self.dropdownMenu) {
-      var pos = $position.positionElements($element, self.dropdownMenu, 'bottom-left', true),
+      var pos = $position.positionElements($element, self.dropdownMenu, 'auto bottom-left', true),
         css,
         rightalign,
         scrollbarWidth;

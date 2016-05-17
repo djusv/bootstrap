@@ -436,8 +436,9 @@ angular.module('ui.bootstrap.position', [])
         targetElem = this.getRawNode(targetElem);
 
         // need to read from prop to support tests.
-        var targetWidth = angular.isDefined(targetElem.offsetWidth) ? targetElem.offsetWidth : targetElem.prop('offsetWidth');
-        var targetHeight = angular.isDefined(targetElem.offsetHeight) ? targetElem.offsetHeight : targetElem.prop('offsetHeight');
+        // angular.element(...).outerWidth() and .outerHeight() require jQuery
+        var targetWidth = angular.element(targetElem).outerWidth();
+        var targetHeight = angular.element(targetElem).outerHeight();
 
         placement = this.parsePlacement(placement);
 
